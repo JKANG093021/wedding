@@ -7,7 +7,8 @@ export function WeddingDetails() {
     weekday: "long",
     timeZone: wedding.timeZone,
   }).format(parsedDate);
-  const locationUrl = /^https:\/\//i.test(wedding.googleMapsUrl) ? wedding.googleMapsUrl : "";
+  const ceremonyLocationUrl = /^https:\/\//i.test(wedding.googleMapsUrl) ? wedding.googleMapsUrl : "";
+  const receptionLocationUrl = /^https:\/\//i.test(wedding.reception.googleMapsUrl) ? wedding.reception.googleMapsUrl : "";
   return <section id="details" className="details-section" aria-labelledby="details-heading">
     <header className="details-title" data-reveal="rise">
       <WeddingRings /><p className="eyebrow">The celebration</p><h2 id="details-heading">Wedding details</h2>
@@ -17,14 +18,13 @@ export function WeddingDetails() {
         <p className="eyebrow detail-label">Date</p><div><h3>{weddingDateLabel}</h3>{weekday && <p>{weekday}</p>}</div>
       </article>
       <article className="detail-line" data-reveal="rise" data-delay="100">
-        <p className="eyebrow detail-label">Venue</p><div><h3>{wedding.venue}</h3><p>{wedding.venueAddress}</p></div>
+        <p className="eyebrow detail-label">Ceremony</p><div><h3>{wedding.ceremonyTime}</h3><p>{wedding.venue}</p><p>{wedding.venueAddress}</p>
+          {ceremonyLocationUrl && <a className="location-outline" href={ceremonyLocationUrl} target="_blank" rel="noopener noreferrer">View ceremony location</a>}
+        </div>
       </article>
       <article className="detail-line" data-reveal="rise" data-delay="180">
-        <p className="eyebrow detail-label">Schedule</p><div><h3>{wedding.ceremonyTime}</h3><p>{wedding.venue}</p></div>
-      </article>
-      <article className="detail-line" data-reveal="rise" data-delay="240">
-        <p className="eyebrow detail-label">Location</p><div><p className="detail-note">Directions to our celebration</p>
-          {locationUrl && <a className="location-outline" href={locationUrl} target="_blank" rel="noopener noreferrer">View location</a>}
+        <p className="eyebrow detail-label">Reception</p><div><h3>{wedding.reception.time}</h3><p>{wedding.reception.venue}</p>{wedding.reception.address && <p>{wedding.reception.address}</p>}
+          {receptionLocationUrl && <a className="location-outline" href={receptionLocationUrl} target="_blank" rel="noopener noreferrer">View reception location</a>}
         </div>
       </article>
     </div>

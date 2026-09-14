@@ -5,13 +5,19 @@ export const wedding = {
   groom: "John Rey",
   bride: "Christine Ericka",
   initials: "J & C",
-  date: "2026-09-28T10:00:00+08:00",
+  date: "2026-09-28T09:00:00+08:00",
   dateLabel: "", // Your preferred printed date once confirmed
-  ceremonyTime: "10:00 AM – 10:30 AM",
+  ceremonyTime: "9:00 AM",
   timeZone: "Asia/Manila",
-  venue: "Akasia Restaurant",
-  venueAddress: "Paringao, Bauang, La Union",
-  googleMapsUrl: "https://maps.app.goo.gl/e7QsqQ2v4fBtZpD1A",
+  venue: "Caba Municipality Mayor’s Office",
+  venueAddress: "Caba, La Union",
+  googleMapsUrl: "",
+  reception: {
+    time: "10:00–10:30 AM",
+    venue: "Akasia Restaurant",
+    address: "",
+    googleMapsUrl: "https://maps.app.goo.gl/e7QsqQ2v4fBtZpD1A",
+  },
   rsvpDeadline: "",
   rsvpUrl: "",
   siteUrl: "https://john-rey-christine-ericka.baliguatjohnrey91.chatgpt.site", // Replace with your final Vercel domain when moving hosts
@@ -24,10 +30,10 @@ export const wedding = {
     objectPosition: "50% 50%",
   },
   music: {
-    enabled: false, // Enable after placing a licensed audio file below
-    src: "/audio/wedding-song.mp3",
-    title: "Our wedding song",
-    playOnOpen: false, // Explicit opt-in by default
+    enabled: true,
+    youtubeId: "PfERKnhJ0u0",
+    title: "Angels Brought Me Here — soft piano",
+    playOnOpen: true,
   },
   attire: "",
   attireColors: [] as string[],

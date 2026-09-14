@@ -30,6 +30,6 @@ export function Countdown() {
         <span className="countdown-value">{countdown?.status === "counting" ? String(countdown[unit]).padStart(2, "0") : "—"}</span><span className="eyebrow">{unit}</span>
       </div>)}
     </div> : <p className="countdown-message" role="status">{status === "today" ? "We can’t wait to celebrate with you." : status === "married" ? <>{wedding.groom} & {wedding.bride}<br />are officially married.</> : "[WEDDING DATE]"}</p>}
-    {isClock && <p className="countdown-note">Counting down to our 10:00 AM celebration in the Philippines.</p>}
+    {isClock && <p className="countdown-note">Counting down to our 9:00 AM ceremony in the Philippines.</p>}
   </section>;
 }

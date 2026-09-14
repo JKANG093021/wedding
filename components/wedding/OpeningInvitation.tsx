@@ -45,7 +45,7 @@ export function OpeningInvitation({ opening, onOpen, onComplete }: {
       </motion.div>
       <motion.div className="opening-action" {...reveal(2.02)}>
         <button className="text-button open-button" onClick={onOpen} disabled={opening}>{opening ? "Opening invitation" : "Open invitation"}</button>
-        <p className="opening-sound-note">A soft chime accompanies the opening.</p>
+        <p className="opening-sound-note">A soft chime opens the invitation, followed by piano music.</p>
       </motion.div>
     </motion.div>
     <motion.p className="opening-footnote eyebrow" initial={{ opacity: 0 }} animate={{ opacity: opening ? 0 : 1 }} transition={{ delay: opening || reduced ? 0 : 2.35, duration: 0.7 }}>With love, always</motion.p>
