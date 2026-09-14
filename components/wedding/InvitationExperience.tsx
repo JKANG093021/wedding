@@ -75,13 +75,29 @@ export function InvitationExperience({ children }: { children: React.ReactNode }
   const musicRef = useRef<MusicHandle>(null);
   const welcomeTimer = useRef<number | null>(null);
   const openingStarted = useRef(false);
+
+  function returnToInvitationStart() {
+    const root = document.documentElement;
+    const previousScrollBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    root.style.scrollBehavior = previousScrollBehavior;
+  }
   useEffect(() => {
     const before = document.body.style.overflow;
     if (stage !== "open") document.body.style.overflow = "hidden";
     return () => { document.body.style.overflow = before; };
   }, [stage]);
   useEffect(() => {
-    if (stage === "open") mainRef.current?.focus({ preventScroll: true });
+    if (stage !== "open") return;
+    returnToInvitationStart();
+    const frame = window.requestAnimationFrame(() => {
+      // Run once more after the welcome layer has unmounted so browser scroll
+      // restoration can never leave the invitation at a later section.
+      returnToInvitationStart();
+      mainRef.current?.focus({ preventScroll: true });
+    });
+    return () => window.cancelAnimationFrame(frame);
   }, [stage]);
   useEffect(() => () => {
     if (welcomeTimer.current !== null) window.clearTimeout(welcomeTimer.current);
@@ -89,6 +105,7 @@ export function InvitationExperience({ children }: { children: React.ReactNode }
   function openInvitation() {
     if (stage !== "closed" || openingStarted.current) return;
     openingStarted.current = true;
+    returnToInvitationStart();
     setStage("opening");
     void playInvitationChime();
     musicRef.current?.startOnOpen();
