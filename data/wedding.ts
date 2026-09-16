@@ -51,7 +51,7 @@ export const wedding = {
   },
   principalSponsors: {
     ninongs: ["James Manacsis", "Dan Bautista"],
-    ninangs: ["Narda Capegsan", "Edna Ancheta", "Alma Sucdang", "Lara Bautista"],
+    ninangs: ["Narda Capegsan", "Lara Bautista", "Edna Ancheta", "Alma Sucdang"],
   },
   gallery: [
     { src: "/images/couple.webp", alt: "John Rey and Christine Ericka in wedding attire", width: 1122, height: 1402, caption: "John Rey & Christine Ericka" },
