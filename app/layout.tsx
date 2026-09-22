@@ -10,12 +10,15 @@ import "./globals.css";
 import { wedding } from "@/data/wedding";
 const title = `${wedding.groom} & ${wedding.bride}`;
 const description = `You're invited to celebrate our wedding at ${wedding.venue}.`;
+const shareTitle = "You are invited — please open this invitation.";
+const shareDescription = `${wedding.groom} & ${wedding.bride} invite you to celebrate their wedding on September 28, 2026.`;
 export const metadata: Metadata = {
   title, description,
   ...(wedding.siteUrl ? { metadataBase: new URL(wedding.siteUrl) } : {}),
-  openGraph: { title, description, type: "website", locale: "en_PH",
-    ...(wedding.socialImage ? { images: [{ url: wedding.socialImage, alt: title }] } : {}) },
-  twitter: { card: wedding.socialImage ? "summary_large_image" : "summary", title, description },
+  openGraph: { title: shareTitle, description: shareDescription, type: "website", locale: "en_PH",
+    ...(wedding.socialImage ? { images: [{ url: wedding.socialImage, width: 1734, height: 907, type: "image/png", alt: shareTitle }] } : {}) },
+  twitter: { card: wedding.socialImage ? "summary_large_image" : "summary", title: shareTitle, description: shareDescription,
+    ...(wedding.socialImage ? { images: [wedding.socialImage] } : {}) },
   icons: { icon: "/favicon.svg" },
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

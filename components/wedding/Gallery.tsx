@@ -42,7 +42,7 @@ export function Gallery() {
       </figure>
       <div className="gallery-detail gallery-detail-two" data-reveal="photo" data-delay="180" aria-hidden="true"><Image src={single.src} alt="" fill sizes="(max-width: 760px) 40vw, 260px" className="gallery-crop gallery-crop-bouquet" /></div>
     </div> : <div className="gallery-grid">
-      {photos.map((photo, index) => <figure data-reveal="photo" data-delay={index % 2 * 140} className={`gallery-item gallery-item-${index % 3}`} key={`${photo.src}-${index}`}>
+      {photos.map((photo, index) => <figure data-reveal="photo" data-delay={index % 2 * 140} className={`gallery-item gallery-item-${photo.orientation}`} key={`${photo.src}-${index}`}>
         <button className="gallery-photo-button" onClick={() => setSelected(index)} aria-label={`View photograph ${index + 1}: ${photo.alt}`} aria-haspopup="dialog">
           <Image src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} sizes="(max-width: 760px) 86vw, 48vw" className="gallery-photo" />
         </button><figcaption>{photo.caption || `${wedding.groom} & ${wedding.bride}`}</figcaption>
