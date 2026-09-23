@@ -28,7 +28,7 @@ export const wedding = {
   rsvpDeadline: "",
   rsvpUrl: "",
   siteUrl: "https://wedding-invitations-theta-five.vercel.app",
-  socialImage: "/images/social-invitation-card.png",
+  socialImage: "/images/social-invitation-card.jpg",
   heroPhoto: {
     src: "/images/couple.webp",
     alt: "John Rey and Christine Ericka together",
