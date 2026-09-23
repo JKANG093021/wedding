@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   } : {}),
   openGraph: { title: shareTitle, description: shareDescription, type: "website", locale: "en_PH",
     ...(wedding.siteUrl ? { url: wedding.siteUrl, siteName: `${wedding.groom} & ${wedding.bride} Wedding` } : {}),
-    ...(wedding.socialImage ? { images: [{ url: wedding.socialImage, width: 1734, height: 907, type: "image/png", alt: shareTitle }] } : {}) },
+    ...(wedding.socialImage ? { images: [{ url: wedding.socialImage, width: 1200, height: 630, type: "image/jpeg", alt: shareTitle }] } : {}) },
   twitter: { card: wedding.socialImage ? "summary_large_image" : "summary", title: shareTitle, description: shareDescription,
     ...(wedding.socialImage ? { images: [wedding.socialImage] } : {}) },
   icons: { icon: "/favicon.svg" },
