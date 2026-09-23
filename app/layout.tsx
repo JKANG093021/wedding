@@ -8,6 +8,9 @@ import "@fontsource/manrope/latin-400.css";
 import "@fontsource/manrope/latin-500.css";
 import "./globals.css";
 import { wedding } from "@/data/wedding";
+
+export const dynamic = "force-dynamic";
+
 const title = `${wedding.groom} & ${wedding.bride}`;
 const description = `You're invited to celebrate our wedding at ${wedding.venue}.`;
 const shareTitle = "You are invited — please open this invitation.";
