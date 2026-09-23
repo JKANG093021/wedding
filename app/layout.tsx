@@ -14,8 +14,12 @@ const shareTitle = "You are invited — please open this invitation.";
 const shareDescription = `${wedding.groom} & ${wedding.bride} invite you to celebrate their wedding on September 28, 2026.`;
 export const metadata: Metadata = {
   title, description,
-  ...(wedding.siteUrl ? { metadataBase: new URL(wedding.siteUrl) } : {}),
+  ...(wedding.siteUrl ? {
+    metadataBase: new URL(wedding.siteUrl),
+    alternates: { canonical: wedding.siteUrl },
+  } : {}),
   openGraph: { title: shareTitle, description: shareDescription, type: "website", locale: "en_PH",
+    ...(wedding.siteUrl ? { url: wedding.siteUrl, siteName: `${wedding.groom} & ${wedding.bride} Wedding` } : {}),
     ...(wedding.socialImage ? { images: [{ url: wedding.socialImage, width: 1734, height: 907, type: "image/png", alt: shareTitle }] } : {}) },
   twitter: { card: wedding.socialImage ? "summary_large_image" : "summary", title: shareTitle, description: shareDescription,
     ...(wedding.socialImage ? { images: [wedding.socialImage] } : {}) },
