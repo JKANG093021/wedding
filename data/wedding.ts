@@ -27,7 +27,7 @@ export const wedding = {
   },
   rsvpDeadline: "",
   rsvpUrl: "",
-  siteUrl: "https://john-rey-christine-ericka.baliguatjohnrey91.chatgpt.site", // Replace with your final Vercel domain when moving hosts
+  siteUrl: "https://wedding-invitations-theta-five.vercel.app",
   socialImage: "/images/social-invitation-card.png",
   heroPhoto: {
     src: "/images/couple.webp",
@@ -57,8 +57,8 @@ export const wedding = {
     },
   },
   principalSponsors: {
-    ninongs: ["James Manacsis", "Dan Bautista"],
-    ninangs: ["Edna Ancheta", "Alma Sucdang", "Narda Capegsan", "Lara Bautista"],
+    ninongs: ["James Manacsis", "Dan Bautista", "Patrick Arthur Gauget", "Benjamin Dungan Jr."],
+    ninangs: ["Narda Capegsan", "Lara Bautista", "Cherry Lyn Gauget", "Edna Ancheta", "Alma Sucdang", "Marline Gapuz"],
   },
   gallery: [
     { src: "/images/couple.webp", alt: "John Rey and Christine Ericka together", width: 1122, height: 1402, caption: "John Rey & Christine Ericka", orientation: "portrait" },
